@@ -1,0 +1,81 @@
+body {
+    background-image: url('/static/res/homebg.jpg');
+}
+input[type=text] {
+    width: 190px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 22px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    margin: 0 0 0 -100px
+}
+
+input[type=text]:focus {
+    width: 300px;
+}
+
+input[type=password] {
+    width: 190px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 22px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin: 0 0 0 -100px
+}
+
+input[type=password]:focus {
+    width: 300px;
+}
+
+input[type=submit] {
+    width: 190px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 22px;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 30px 12px 30px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin: 0 0 0 -100px
+}
+
+#centerScreen {
+  position: absolute;
+  width: 500px;
+  height: 50px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -250px;
+}
+
+#errorText {
+  position: absolute:
+  z-index: 15;
+  top: 100px;
+  left: 50%;
+  color: red;
+}

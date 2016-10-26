@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Login</title>
+	<script src="static/sha512.js"></script>
+	<script>
+		function hashPassword() {
+			var pass = document.getElementById('password');
+			pass.value = SHA512(pass.value);
+		}
+	</script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="static/styles/all-styles.css">
+    <body>
+	<ul>
+	  <li><a href="/">Home</a></li>
+          <li><a href="/feedback">Feedback</a></li>
+	</ul>
+        <h2>Register a new accuont</h2>
+	<form action="/register" method="post" onsubmit="hashPassword()">
+            <p><input type="text" name="UserName" placeholder="Username"></p>
+            <p><input id="password" type="Password" name="Password" placeholder="Password"></p>
+            <p><input type="text" name="FirstName" placeholder="First Name"></p>
+            <p><input type="text" name="LastName" placeholder="Last Name"></p>
+            <p><input type="text" name="Email" placeholder="Email"></p>
+            <p><input type="submit" value="Login"></p>
+        </form>
+        <p>{{ message }}</p>
+    </body>
+</html>
