@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Wishlist</title>
+    </head>
+    <body>
+        <form action="/wishlist" method="post">
+            <p><input type="text" name="productID" placeholder="Enter Product ID"></p>
+            <p><input type="submit" value="Submit"></p>
+        </form>
+        <h2>Current Wishlist</h2>
+        <br>
+        {% for row in items %}
+            <div>
+                <p>product id: {{ row[0] }}</p>
+            </div>
+            <hr>
+        {% endfor %}
+    </body>
+</html>

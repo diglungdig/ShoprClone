@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>{{ search }}</title>
+    </head>
+    <body>
+        <h2>Search Results</h2>
+        <br>
+        {% for row in items %}
+            <div>
+                <p>ds: {{ row[0] }}</p>
+		<p>upc: {{ row[1] }}</p>
+                <p>product_id: {{ row[2] }}</p>
+                <p>name: {{ row[3] }}</p>
+                <p>type: {{ row[4] }}</p>
+                <p>regular_price: {{ row[5] }}</p>
+                <p>sale_price: {{ row[6] }}</p>
+                <p>on_sale: {{ row[7] }}</p>
+                <p>image: {{ row[8] }}</p>
+                <p>thumbnail: {{ row[9] }}</p>
+                <p>short_desc: {{ row[10] }}</p>
+                <p>long_desc: {{ row[11] }}</p>
+                <p>cust_review_count: {{ row[12] }}</p>
+                <p>cust_review_avg: {{ row[13] }}</p>
+                <p>vendor: {{ row[14] }}</p>
+                <p>category_path: {{ row[15] }}</p>
+            </div>
+            <hr>
+        {% endfor %}
+    </body>
+</html>
