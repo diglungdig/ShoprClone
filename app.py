@@ -30,15 +30,26 @@ facebook = oauth.remote_app('facebook',
 )
 
 #Database Setup
-cnx = {'host': 'shoprdevdb.c3qsazu8diam.us-east-1.rds.amazonaws.com',
-  'username': 'shopradmin',
-  'password': 'shopradmin',
+cnx = {'host': 'userdata.cyctvmvxfbyc.us-west-2.rds.amazonaws.com',
+  'username': 'admin',
+  'password': 'sahilpujari',
   'db': 'shopr',
   'port': '3306'}
 
 #Connect to database
 db = MySQLdb.connect(cnx['host'],cnx['username'],cnx['password'], cnx['db'])
 cursor = db.cursor()
+
+#Products DB Setup
+cnx2 = {'host': 'shoprdevdb.c3qsazu8diam.us-east-1.rds.amazonaws.com',
+  'username': 'shopradmin',
+  'password': 'shopradmin',
+  'db': 'shopr',
+  'port': '3306'}
+
+#Connect to products db
+db2 = MySQLdb.connect(cnx2['host'],cnx2['username'],cnx2['password'],cnx2['db'])
+cursor2 = db2.cursor()
 
 print 'connected'
 
@@ -131,9 +142,13 @@ def Register():
     else:
         return render_template('register.html')
 
-@app.route('/search')
+@app.route('/search', methods=['GET', 'POST'])
 def search():
-    if request.args.get('q') is not None:
+    if request.method =='POST':
+	productId = request.form['productId']
+	addToCart(productId, 1)
+	return redirect('/cart')
+    elif request.args.get('q') is not None:
         addHistory(request.args.get('q'))
 
         filters = []
@@ -156,8 +171,8 @@ def search():
             query += (" AND " +  filter)
 
         query += " LIMIT 25;"
-        cursor.execute(query)
-        data = cursor.fetchall()
+        cursor2.execute(query)
+        data = cursor2.fetchall()
         return render_template('search.html', search = request.args.get('q'), items = data)
     else:
         return redirect('/')
@@ -172,14 +187,7 @@ def history():
             LIMIT 10;"
         cursor.execute(query)
         data = cursor.fetchall()
-        if data is not None:
-            hist = '{"history":['
-            for row in data:
-                hist += ('"' + row[0] + '",')
-            hist = hist[0:(len(hist) - 1)] + ']}'
-            return hist
-        else:
-            return
+        return render_template('history.html', items = data)
     else:
         return redirect('/login')
 
@@ -252,8 +260,8 @@ def addToCart(product_id, quant):
     if 'user_id' in session:
         query = "INSERT INTO shopping_cart \
             VALUES('" + str(session['user_id']) + "', \
-                %d, \
-                %d, \
+                %s, \
+                %s, \
                 NOW());" % (product_id, quant)
         cursor.execute(query)
         db.commit()
