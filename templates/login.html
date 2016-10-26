@@ -8,23 +8,14 @@
 			pass.value = SHA512(pass.value);
 		}
 	</script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="static/styles/all-styles.css">
-	<link rel="stylesheet" type="text/css" href="static/styles/login-styles.css">
     </head>
     <body>
-	<ul>
-	  <li><a href="/">Home</a></li>
-	  <li><a href="/feedback">Feedback</a></li>
-	  <li style="float:right"><a href="/register">Register</a></li>
-	</ul>
-	<div id="centerScreen">
+        <h2>Login</h2>
         <form action="/login" method="post" onsubmit="hashPassword()">
-            <input type="text" name="username" placeholder="Username">
-            <input id="password" type="password" name="password" placeholder="Password">
-            <input type="submit" value="Login">
+            <p><input type="text" name="username" placeholder="Username"></p>
+            <p><input id="password" type="password" name="password" placeholder="Password"></p>
+            <p><input type="submit" value="Login"></p>
         </form>
-	</div>
-        <p id="errorText">{{ message }}</p>
+        <p>{{ message }}</p>
     </body>
 </html>
