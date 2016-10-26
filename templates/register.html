@@ -8,10 +8,15 @@
 			pass.value = SHA512(pass.value);
 		}
 	</script>
-    </head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="static/styles/all-styles.css">
     <body>
-        <h2>Login</h2>
-        <form action="/register" method="post" onsubmit="hashPassword()">
+	<ul>
+	  <li><a href="/">Home</a></li>
+          <li><a href="/feedback">Feedback</a></li>
+	</ul>
+        <h2>Register a new accuont</h2>
+	<form action="/register" method="post" onsubmit="hashPassword()">
             <p><input type="text" name="UserName" placeholder="Username"></p>
             <p><input id="password" type="Password" name="Password" placeholder="Password"></p>
             <p><input type="text" name="FirstName" placeholder="First Name"></p>
