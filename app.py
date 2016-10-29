@@ -1,7 +1,9 @@
 from flask import Flask, session, redirect, url_for, escape, request, render_template
 from flask.ext.bcrypt import Bcrypt
 from flask_oauth import OAuth
+from decimal import Decimal
 import MySQLdb
+
 
 #Facebook Login Setup
 SECRET_KEY = 'Shopr spelt without an e'
@@ -163,7 +165,8 @@ def search():
         if request.args.get('product_id') is not None:
             filters.append("product_id='" + request.args.get('product_id') + "'")
 
-        query = "SELECT * \
+        query = "SELECT ds, upc, name, regular_price, sale_price, image, thumbnail, short_desc, \
+                        long_desc, cust_review_count, cust_review_avg, vendor, category_path \
             FROM products \
             WHERE name LIKE '%" + request.args.get('q') + "%'"
 
@@ -276,4 +279,4 @@ def addHistory(search):
         db.commit()
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000, debug=True)

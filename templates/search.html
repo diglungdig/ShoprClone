@@ -18,13 +18,12 @@
     {% for row in items %}
       <div>
     		<form action="/search" method="post">
-                    <h2>{{ row[3].decode('utf-8').strip() }}</h2>
-                    <img src="url({{ row[9] }})" alt={{ row[9] }}>
-                    <p>{{ row[11] }}</p>
-                    <h3>Vendor</h3>{{ row[14] }}
-                    <h3>Regular Price</h3>{{ row[5] }}
-                    <h3>Sale Price</h3>{{ row[6] }}
-                    <h3>Product ID<input type="text" name="productId" style="visibility: hidden;" value="{{ row[2] }}"></h3>{{ row[2] }}
+                    <h2>{{ row[2].decode('utf-8').strip() }}</h2>
+                    <img src="url({{ row[6] }})" alt={{ row[9] }}>
+                    <p>{{ row[7] }}</p>
+                    <h3>Vendor</h3>{{ row[11] }}
+                    <h3>Regular Price</h3>{{ row[3] }}
+                    <h3>Sale Price</h3>{{ row[4] }}
                     <h3>UPC</h3>{{ row[1] }}
     		<br>
     		<br>
