@@ -166,7 +166,6 @@ def search():
         query = "SELECT * \
             FROM products \
             WHERE name LIKE '%" + request.args.get('q') + "%'"
-
         for filter in filters:
             query += (" AND " +  filter)
 
