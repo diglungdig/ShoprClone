@@ -186,7 +186,6 @@ def search():
 @app.route('/product', methods=['GET', 'POST'])
 def product():
     if request.method =='POST':
-        #upc = request.form['UPC']
         upc=request.args.get('UPC', None)
         print(upc)
         return render_template('product.html', UPC=request.args.get('UPC', None))
