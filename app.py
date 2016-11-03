@@ -180,15 +180,20 @@ def search():
     else:
         return redirect('/')
 
+    
+    
 @app.route('/product', methods=['GET', 'POST'])
 def product():
     if request.method =='POST':
-        upc = request.form['UPC']
+        #upc = request.form['UPC']
+        upc=request.args.get('my_var', None)
         print(upc)
         return render_template('product.html')
     else:
         return redirect('/')
 
+    
+    
 @app.route('/history')
 def history():
     if 'user_id' in session:
