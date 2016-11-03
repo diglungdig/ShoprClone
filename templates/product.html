@@ -19,12 +19,12 @@
       <div>
     		<form action="/product" method="post">
                     <h2>{{ row[2].decode('utf-8').strip() }}</h2>
-                    <img src="{{ row[6][1:-1] }}" alt={{ row[9] }} height="60" width="60">
+                    <img src="{{ row[6][1:-1] }}" alt={{ row[9] }} height="180" width="180">
                     <h3>Vendor</h3>{{ row[11] }}
                     <h3>Regular Price</h3>{{ row[3] }}
                     <h3>Sale Price</h3>{{ row[4] }}
                     <h3>UPC</h3>{{ row[1] }}
-		    <h3>Long description</h3> {{ row[8] }}
+		    <h3>Long description</h3> {{ row[8][1:-1] }}
     		<br>
     		<br>
     		<input id="addCart" type="submit" value="Add to Cart"/>

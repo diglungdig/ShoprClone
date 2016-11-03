@@ -20,12 +20,11 @@
     		<form action="/search" method="post">
                     <h2>{{ row[2].decode('utf-8').strip() }}</h2>
                     <img src="{{ row[6][1:-1] }}" alt={{ row[9] }}>
-                    <p>{{ row[7] }}</p>
                     <h3>Vendor</h3>{{ row[11] }}
                     <h3>Regular Price</h3>{{ row[3] }}
                     <h3>Sale Price</h3>{{ row[4] }}
                     <h3>UPC</h3>{{ row[1] }}
-		    <h3>Short description</h3> {{ row[7] }}
+		    <h3>Short description</h3> {{ row[7][1:-1] }}
     		<br>
     		<br>
             <input name="UPC" value = {{ row[1] }} type="hidden">
