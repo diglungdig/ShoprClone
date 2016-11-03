@@ -180,9 +180,14 @@ def search():
     else:
         return redirect('/')
 
-@app.route('/product')
+@app.route('/product', methods=['GET', 'POST'])
 def product():
-    return render_template('product.html')
+    if request.method =='POST':
+        upc = request.form['UPC']
+        print(upc)
+        return render_template('product.html')
+    else:
+        return redirect('/')
 
 @app.route('/history')
 def history():

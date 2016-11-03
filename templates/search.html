@@ -11,7 +11,6 @@
   		<li><a href="/feedback">Feedback</a></li>
   		<li><a href="/wishlist">WishList</a></li>
   		<li><a href="/cart">ShoppingCart</a></li>
-  		<li><a href="/product">Product</a></li>
 		<li style="float:right"><a href="/logout">Logout</a>
   	</ul>
 	<br>
@@ -31,7 +30,10 @@
     		<br>
     		<input id="addCart" type="submit" value="Add to Cart"/>
     		</form>
-		<form action="/product">	
+		
+
+		<form action="/product" method="post">	
+		<input name="UPC" value = {{ row[1] }} type="hidden"> 
 		<input id="productPage" type="submit" value="Go to page">
 		</form>
       </div>
