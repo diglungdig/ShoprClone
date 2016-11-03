@@ -190,7 +190,8 @@ def product():
         print(upc)
         return render_template('product.html')
     else:
-        return redirect('/')
+        return render_template('product.html')
+        #return redirect('/')
 
     
     
