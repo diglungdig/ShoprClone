@@ -6,12 +6,13 @@
     </head>
   <body>
     <ul>
-		  <li><a href="/">Home</a></li>
+		<li><a href="/">Home</a></li>
   		<li><a href="/history">History</a></li>
   		<li><a href="/feedback">Feedback</a></li>
   		<li><a href="/wishlist">WishList</a></li>
   		<li><a href="/cart">ShoppingCart</a></li>
-  		<li style="float:right"><a href="/logout">Logout</a>
+  		<li><a href="/product">Product</a></li>
+		<li style="float:right"><a href="/logout">Logout</a>
   	</ul>
 	<br>
     <h1>Search Results</h1>
@@ -19,16 +20,20 @@
       <div>
     		<form action="/search" method="post">
                     <h2>{{ row[2].decode('utf-8').strip() }}</h2>
-                    <img src="url({{ row[6] }})" alt={{ row[9] }}>
+                    <img src="{{ row[6][1:-1] }}" alt={{ row[9] }}>
                     <p>{{ row[7] }}</p>
                     <h3>Vendor</h3>{{ row[11] }}
                     <h3>Regular Price</h3>{{ row[3] }}
                     <h3>Sale Price</h3>{{ row[4] }}
                     <h3>UPC</h3>{{ row[1] }}
+		    <h3>Short description</h3> {{ row[7] }}
     		<br>
     		<br>
     		<input id="addCart" type="submit" value="Add to Cart"/>
     		</form>
+		<form action="/product">	
+		<input id="productPage" type="submit" value="Go to page">
+		</form>
       </div>
     <hr>
       {% endfor %}

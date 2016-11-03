@@ -180,6 +180,10 @@ def search():
     else:
         return redirect('/')
 
+@app.route('/product')
+def product():
+    return render_template('product.html')
+
 @app.route('/history')
 def history():
     if 'user_id' in session:
@@ -277,6 +281,7 @@ def addHistory(search):
                 NOW());"
         cursor.execute(query)
         db.commit()
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
