@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>{{ search }}</title>
+        <title>{{ product }}</title>
 	      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	      <link rel="stylesheet" type="text/css" href="static/styles/all-styles.css">
     </head>
@@ -11,9 +11,27 @@
   		<li><a href="/feedback">Feedback</a></li>
   		<li><a href="/wishlist">WishList</a></li>
   		<li><a href="/cart">ShoppingCart</a></li>
-  		<li><a href="/product">Product</a></li>
 		<li style="float:right"><a href="/logout">Logout</a>
     </ul>
     <br>
+      <h1>Product Detail</h1>
+      {% for row in items %}
+      <div>
+    		<form action="/product" method="get">
+                    <h2>{{ row[2].decode('utf-8').strip() }}</h2>
+                    <img src="{{ row[6][1:-1] }}" alt={{ row[9] }}>
+                    <p>{{ row[7] }}</p>
+                    <h3>Vendor</h3>{{ row[11] }}
+                    <h3>Regular Price</h3>{{ row[3] }}
+                    <h3>Sale Price</h3>{{ row[4] }}
+                    <h3>UPC</h3>{{ row[1] }}
+		    <h3>Short description</h3> {{ row[7] }}
+    		<br>
+    		<br>
+    		<input id="addCart" type="submit" value="Add to Cart"/>
+    		</form>
+      </div>
+    <hr>
+      {% endfor %}
   </body>
 </html>

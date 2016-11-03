@@ -172,7 +172,7 @@ def search():
 
         for filter in filters:
             query += (" AND " +  filter)
-
+s
         query += " LIMIT 25;"
         cursor2.execute(query)
         data = cursor2.fetchall()
@@ -182,17 +182,46 @@ def search():
 
     
     
+    
 @app.route('/product', methods=['GET', 'POST'])
 def product():
     if request.method =='POST':
         #upc = request.form['UPC']
-        upc=request.args.get('my_var', None)
+        upc=request.args.get('UPC', None)
         print(upc)
-        return render_template('product.html')
+        return render_template('product.html', UPC=request.args.get('UPC', None))
     else:
-        return render_template('product.html')
-        #return redirect('/')
+        upc=request.args.get('UPC', None)
+        
+        filters = []
+        if request.args.get('type') is not None:
+            filters.append("type='" + request.args.get('type') + "'")
+        if request.args.get('max_price') is not None:
+            filters.append("sale_price < " + request.args.get('max_price'))
+        if request.args.get('min_price') is not None:
+            filters.append("sale_price > " + request.args.get('min_price'))
+        if request.args.get('vendor') is not None:
+            filters.append("vendor='" + request.args.get('vendor') + "'")
+        if request.args.get('product_id') is not None:
+            filters.append("product_id='" + request.args.get('product_id') + "'")
 
+        query = "SELECT ds, upc, name, regular_price, sale_price, image, thumbnail, short_desc, \
+                        long_desc, cust_review_count, cust_review_avg, vendor, category_path \
+            FROM products \
+            WHERE upc LIKE '%" + request.args.get('UPC') + "%'"
+
+        for filter in filters:
+            query += (" AND " +  filter)
+s
+        query += " LIMIT 25;"
+        cursor2.execute(query)
+        data = cursor2.fetchall()
+        
+        return render_template('product.html', product=request.args.get('UPC', None), items=data)
+
+    
+    
+    
     
     
 @app.route('/history')
