@@ -14,8 +14,8 @@
 		<li style="float:right"><a href="/logout">Logout</a>
     </ul>
     <br>
-      <h1>Product Detail</h1>
-      {% for row in items %}
+    <h1>Product Detail</h1>
+    {% for row in items %}
       <div>
     		<form action="/product" method="get">
                     <h2>{{ row[2].decode('utf-8').strip() }}</h2>

@@ -172,7 +172,7 @@ def search():
 
         for filter in filters:
             query += (" AND " +  filter)
-s
+
         query += " LIMIT 25;"
         cursor2.execute(query)
         data = cursor2.fetchall()
@@ -212,17 +212,13 @@ def product():
 
         for filter in filters:
             query += (" AND " +  filter)
-s
+
         query += " LIMIT 25;"
         cursor2.execute(query)
         data = cursor2.fetchall()
         
         return render_template('product.html', product=request.args.get('UPC', None), items=data)
 
-    
-    
-    
-    
     
 @app.route('/history')
 def history():
