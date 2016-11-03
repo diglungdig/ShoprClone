@@ -147,7 +147,7 @@ def Register():
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     if request.method =='POST':
-	productId = request.args.get('UPC', None)
+	productId = request.form['UPC']
 	addToCart(productId, 1)
     elif request.args.get('q') is not None:
         addHistory(request.args.get('q'))

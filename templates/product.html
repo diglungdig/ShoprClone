@@ -17,7 +17,7 @@
     <h1>Product Detail</h1>
     {% for row in items %}
       <div>
-    		<form action="/product" method="get">
+    		<form action="/product" method="post">
                     <h2>{{ row[2].decode('utf-8').strip() }}</h2>
                     <img src="{{ row[6][1:-1] }}" alt={{ row[9] }}>
                     <p>{{ row[7] }}</p>
@@ -25,7 +25,7 @@
                     <h3>Regular Price</h3>{{ row[3] }}
                     <h3>Sale Price</h3>{{ row[4] }}
                     <h3>UPC</h3>{{ row[1] }}
-		    <h3>Short description</h3> {{ row[7] }}
+		    <h3>Short description</h3> {{ row[8] }}
     		<br>
     		<br>
     		<input id="addCart" type="submit" value="Add to Cart"/>
