@@ -204,10 +204,10 @@ def product():
             filters.append("product_id='" + request.args.get('product_id') + "'")
 
         query = "SELECT ds, upc, name, regular_price, sale_price, image, thumbnail, short_desc, \
-                        long_desc, cust_review_count, cust_review_avg, vendor, category_path \
+                       long_desc, cust_review_count, cust_review_avg, vendor, category_path \
             FROM products \
             WHERE upc LIKE '%" + request.args.get('UPC') + "%'"
-
+        
         for filter in filters:
             query += (" AND " +  filter)
 
