@@ -1,5 +1,8 @@
 body {
     background-image: url('/static/res/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: content-box;
 }
 input[type=text] {
     width: 190px;
