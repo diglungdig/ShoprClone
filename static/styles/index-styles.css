@@ -23,11 +23,9 @@ input[type=text] {
     left: 50%;
     margin: 0 0 0 -100px
 }
-
 input[type=text]:focus {
     width: 100%;
 }
-
 #centerScreen {
   position: absolute;
   width: 500px;
