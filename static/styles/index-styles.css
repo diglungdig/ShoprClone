@@ -67,8 +67,6 @@ input[type=text] {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
     position: absolute;
-    top: 50%;
-    left: 50%;
     margin: 0 0 0 -100px
 }
 input[type=text]:focus {
