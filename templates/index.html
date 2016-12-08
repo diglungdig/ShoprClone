@@ -51,9 +51,17 @@ $(document).ready(function(){
             <li><a href="">No Filter(Let us handle the search!)</a></li>
         </ul>
         </div>
+                <!--
     <input type="text" name="q" name="search" placeholder="Search..">
     <input type="submit" value="Search" style="visibility: hidden;"/>
-                </div>
+                -->
+                                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+                
+            </div>
         </div>
       </div>
   </form>
