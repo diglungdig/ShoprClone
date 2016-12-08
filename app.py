@@ -297,6 +297,11 @@ def forgotPassword():
     else:
         return render_template('forgotPassword.html')
 
+@app.route('/mailbox')
+def mailbox():
+    if 'user_id' in session:
+        return redirect('/mailbox')
+    
 def addToCart(product_id, quant):
     if 'user_id' in session:
         query = "INSERT INTO shopping_cart \
