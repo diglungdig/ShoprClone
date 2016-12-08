@@ -72,10 +72,10 @@ li.notificationDropdown {
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.notificationDropdown:hover .dropbtn {
+/*.notificationDropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
-
+*/
 #centerScreen {
   position: absolute;
   width: 500px;
