@@ -300,7 +300,7 @@ def forgotPassword():
 @app.route('/mailbox')
 def mailbox():
     if 'user_id' in session:
-        return redirect('/mailbox')
+        return render_template('mailbox.html')
     
 def addToCart(product_id, quant):
     if 'user_id' in session:
