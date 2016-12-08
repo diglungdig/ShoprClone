@@ -35,8 +35,8 @@ $(document).ready(function(){
 <div id="centerScreen">
     <form action="/search" method="get">
         <div class="container">
-        <div class="row">    
-            <div  class="col-xs-8 col-xs-offset-2">
+        <!--<div class="row">    
+            <div  class="col-md-8 col-md-offset-2">
                 <div class="input-group">
                     <div class="input-group-btn search-panel">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -60,17 +60,32 @@ $(document).ready(function(){
                     <input type="submit" value="Search" style="visibility: hidden;"/>
                     -->
                     <!--<input type="hidden" name="search_param" value="all" id="search_param">-->        
-                    <input type="text" name="q" name="search" placeholder="Search term...">
+                    <!--
+                        <input type="text" name="q" name="search" placeholder="Search term...">
                     <input type="submit" value="Search" style="visibility: hidden;"/>
                     <!--
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                     </span>
-                    -->
+                    -->     
                     
-                </div>
-            </div>
-        </div>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">Dropdown header 1</li>
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Dropdown header 2</li>
+                  <li><a href="#">About Us</a></li>
+                </ul>
+              </div>
+            
+                    <input type="text" name="q" name="search" placeholder="Search term...">
+                    <input type="submit" value="Search" style="visibility: hidden;"/>
+            
         </div>
     </form>
 </div>
