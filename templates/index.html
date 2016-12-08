@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="static/styles/index-styles.css">
 <link rel="stylesheet" type="text/css" href="static/styles/all-styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body >
@@ -12,6 +14,7 @@
   <li><a href="/feedback">Feedback</a></li>
   <li><a href="/wishlist">Wish List</a></li>
   <li><a href="/cart">Shopping Cart</a></li>
+  
   <li style="float:right"><a href="/logout">Logout</a>
   <li style="float:right"><a href="/forgotPassword">Account</a>
   <li class="notificaitonDropdown" style="float:right">
@@ -22,7 +25,11 @@
         <a href="#">Link 3</a>
       </div>
       </li>
+  <li style="float:right"><button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="You have no notification">
+  Your notifcation</button>
   </ul>
+    
+    
   <div id="centerScreen">
   <form action="/search" method="get">
     <input type="text" name="q" name="search" placeholder="Search..">
